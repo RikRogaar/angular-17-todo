@@ -1,0 +1,15 @@
+<div class="bg-gray-500 p-4 mr-6 rounded shadow-lg flex flex-col gap-4 items-center">
+    <div>
+        <div class="flex flex-col gap-4">
+            @for (todo of todos; track $index) {
+                <todo-entry [todo]="todo" />
+            }
+        </div>
+    </div>
+    <div
+        class="px-3 rounded-xl bg-cyan-700 w-fit cursor-pointer"
+        (click)="todoService.resetTodos$.next()"
+    >
+        Reset todos
+    </div>
+</div>

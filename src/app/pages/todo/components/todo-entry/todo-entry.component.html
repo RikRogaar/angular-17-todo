@@ -1,0 +1,14 @@
+<div class="flex justify-between gap-4 border-b-2 border-b-white">
+    <div>{{ todo.id }}) {{ todo.title }}</div>
+    <div class="flex gap-2">
+        <div>
+            <input type="checkbox" [checked]="todo.isDone" (change)="todoService.checkTodo$.next(todo.id)"/>
+        </div>
+        <div
+            class="cursor-pointer"
+            (click)="todoService.deleteTodo$.next(todo.id)"
+        >
+            <fa-icon [icon]="faDeleteLeft" class="text-red-500"/>
+        </div>
+    </div>
+</div>
